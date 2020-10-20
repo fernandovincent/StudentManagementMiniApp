@@ -103,6 +103,16 @@
         });
 
         refresh_studenttabledata();
+        document.getElementById("formstudent_id").value = "";
+        document.getElementById("formstudent_name").value = "";
+        document.getElementById("formstudent_faculty").selectedIndex = 0;
+    {
+        let formstudent_programofstudy = document.getElementById("formstudent_programofstudy");
+        //Menghilangkan semua elemen yang ada
+        formstudent_programofstudy.textContent = ''; 
+        formstudent_programofstudy.appendChild((() => {let x = document.createElement("option"); x.innerText = "--- SELECT PROGRAM OF STUDY ---"; return x;})());
+        formstudent_programofstudy.selectedIndex = 0;
+    }
     }
     
     function refresh_studenttabledata() {
